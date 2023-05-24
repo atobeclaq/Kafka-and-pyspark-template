@@ -41,6 +41,11 @@ This script will read and process the messages using Spark Streaming.
 
 Customize the processing logic inside the spark/consumer.py script according to your requirements.
 
+Helper
+
+check the port of the zookeeper
+```lsof -i :2181```
+
 Contributing
 Contributions are welcome! If you find any issues or have suggestions for improvements, please open an issue or submit a pull request.
 

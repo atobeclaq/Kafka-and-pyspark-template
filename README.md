@@ -19,8 +19,8 @@ This project demonstrates the integration of Apache Kafka and Apache Spark for p
 
 ## Project Structure
 
-- `kafka/producer.py`: Kafka producer script that sends messages to a Kafka topic.
-- `spark/consumer.py`: Spark consumer script that reads and processes messages from a Kafka topic.
+- `kafka/sample-kafka-producer.py`: Kafka producer script that sends messages to a Kafka topic.
+- `kafka/sample-kafka-consumer.py`: Spark consumer script that reads and processes messages from a Kafka topic.
 
 ## Usage
 

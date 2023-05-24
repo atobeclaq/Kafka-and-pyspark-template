@@ -24,7 +24,10 @@ This project demonstrates the integration of Apache Kafka and Apache Spark for p
 
 ## Usage
 
-1. Start the Kafka server and ZooKeeper.
+1. Start the Kafka server and ZooKeeper by running.
+```shell
+./kafka/start-kafka-zookeeper.sh
+```
 
 2. In a new terminal, run the Kafka producer:
 ```shell
@@ -41,13 +44,13 @@ This script will read and process the messages using Spark Streaming.
 
 Customize the processing logic inside the spark/consumer.py script according to your requirements.
 
-Helper
+## Helper
 
 check the port of the zookeeper
 ```lsof -i :2181```
 
-Contributing
+## Contributing
 Contributions are welcome! If you find any issues or have suggestions for improvements, please open an issue or submit a pull request.
 
-License
+## License
 This project is licensed under the MIT License.

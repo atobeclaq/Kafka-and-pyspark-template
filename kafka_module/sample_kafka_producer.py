@@ -23,17 +23,14 @@ def Producer(
             message = f"Message generated at {time.time()}"
             producer.send(topic, value=message.encode('utf-8'))
             time.sleep(1)  # Wait for 1 second before sending the next message
+
     elif(type == "production"):
         print("Real msg generating")
         with open(messagesource, 'r') as file:
             csv_reader = csv.reader(file)
             for row in csv_reader:
                 print(row, "is sending -----------------------------")
-                # Process the row as needed
-                # Convert the row to a message value (e.g., JSON string, comma-separated string)
-                # Send the message to Kafka
                 producer.send(topic, bytes(str(row), encoding='utf-8'))
-
 
     # Close the producer (this part may not be executed since it's an infinite loop)
     print("Producer shutting down")

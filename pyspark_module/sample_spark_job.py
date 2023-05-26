@@ -2,10 +2,6 @@ from pyspark.sql import SparkSession
 from pyspark.sql.types import StructType, StructField, IntegerType, StringType
 import os
 import pandas as pd
-def transformation_fn(input_df):
-    # Apply transformation logic
-    output_df = input_df.withColumn("age_squared", input_df.age ** 2)
-    return output_df
 
 def transform_data(input_data, output_file, transformation_fn, schema):
     # Create a SparkSession
@@ -21,27 +17,12 @@ def transform_data(input_data, output_file, transformation_fn, schema):
     # Set the log level
     spark.sparkContext.setLogLevel("INFO")
 
-    # schema = StructType([
-    #     StructField("id", IntegerType(), nullable=False),
-    #     StructField("name", StringType(), nullable=False),
-    #     StructField("age", IntegerType(), nullable=False)
-    # ])
-
-
     # Convert the input_data dictionary to a list of rows
     rows = [(input_data[field.name]) for field in schema.fields]
 
-    print(rows)
-
-
-    print(" input data is ", rows)
+    logger.info(" input data is ", rows)
     # Create the DataFrame
     input_df = spark.createDataFrame([rows], schema)
-
-    # Perform data transformation
-    # output_df = input_df.select("id", "name", "age") \
-    #     .filter(input_df.id > 10) \
-    #     .withColumn("new_column", input_df.id * 2)
 
     output_df = transformation_fn(input_df)
     # Convert DataFrame to Pandas DataFrame

@@ -4,15 +4,18 @@ from pyspark_module import transform_data
 import ast
 from multiprocessing import Process, Queue
 from pyspark.sql.types import StructType, StructField, IntegerType, StringType
+
 schema = StructType([
     StructField("id", IntegerType(), nullable=False),
     StructField("name", StringType(), nullable=False),
     StructField("age", IntegerType(), nullable=False)
 ])
+
 def transformation_fn(input_df):
     # Apply transformation logic
     output_df = input_df.withColumn("age_squared", input_df.age ** 2)
     return output_df
+
 def process_message(message):
     # Convert the message string to a list
     data = ast.literal_eval(message)

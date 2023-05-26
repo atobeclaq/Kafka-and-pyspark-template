@@ -10,8 +10,6 @@ def Consumer(
     topics:str = "topic1",
     group_id:str = "my-group"
     ):
-    # Kafka broker configuration
-    # bootstrap_servers = 'localhost:9092'
 
     # Kafka topics to subscribe to
     topics = [topics]

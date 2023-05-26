@@ -14,10 +14,11 @@ check_zookeeper_started() {
         lsof -i :2181 | grep LISTEN > /dev/null
         if [ $? -eq 0 ]; then
             echo "ZooKeeper is running on port 2181."
+            sleep 5
             break
         else
             echo "ZooKeeper is not running on port 2181. Retrying..."
-            sleep 1
+            sleep 5
         fi
     done
 }

@@ -31,7 +31,7 @@ git clone https://github.com/atobeclaq/Kafka-and-pyspark-template.git
 ```
 ## Usage
 
-1. Start the Kafka server and ZooKeeper by running.
+1. Start the Kafka server and ZooKeeper by running. Before this, remember change kafka dir in `start-kafka.sh` and `start-zookeeper.sh` 
 ```shell
 ./kafka/start-kafka-zookeeper.sh
 ```

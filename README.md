@@ -28,7 +28,7 @@ This project demonstrates the integration of Apache Kafka and Apache Spark for p
 
 ```bash
 git clone https://github.com/atobeclaq/Kafka-and-pyspark-template.git
-
+```
 ## Usage
 
 1. Start the Kafka server and ZooKeeper by running.

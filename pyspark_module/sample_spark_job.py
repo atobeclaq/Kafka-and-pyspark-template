@@ -12,15 +12,14 @@ def transform_data(input_data, output_file, transformation_fn, schema):
         .getOrCreate()
 
     # Set up logging
-    log4j = spark._jvm.org.apache.log4j
-    logger = log4j.LogManager.getLogger(__name__)
+    logger = spark._jvm.org.apache.log4j.LogManager.getLogger(__name__)
     # Set the log level
     spark.sparkContext.setLogLevel("INFO")
 
     # Convert the input_data dictionary to a list of rows
     rows = [(input_data[field.name]) for field in schema.fields]
 
-    logger.info(" input data is "  + str(rows))
+    logger.info("input data is " + str(rows))
     # Create the DataFrame
     input_df = spark.createDataFrame([rows], schema)
 
@@ -29,13 +28,13 @@ def transform_data(input_data, output_file, transformation_fn, schema):
     pandas_df = output_df.toPandas()
 
     # Save Pandas DataFrame as CSV
-    # Check if the output file already exists
     if os.path.isfile(output_file):
         # Append data to the existing file
         pandas_df.to_csv(output_file, mode='a', header=False, index=False)
     else:
         # Save Pandas DataFrame as CSV
         pandas_df.to_csv(output_file, index=False)
+
     # Log a message
     logger.info("Data transformation completed successfully.")
 

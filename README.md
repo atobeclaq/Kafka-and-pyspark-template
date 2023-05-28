@@ -21,6 +21,17 @@ This project demonstrates the integration of Apache Kafka and Apache Spark for p
 
 - `kafka/sample-kafka-producer.py`: Kafka producer script that sends messages to a Kafka topic.
 - `kafka/sample-kafka-consumer.py`: Spark consumer script that reads and processes messages from a Kafka topic.
+    Kafka-and-PySpark-Template
+    │ README.md
+    │ combine.py
+    │
+    └───pyspark_module
+    │ │ sample_spark_job.py
+    │ │ input.csv
+    │
+    └───kafka_module
+    │ sample_kafka_consumer.py
+    │ sample_kafka_producer.py
 
 ## Usage
 
@@ -43,6 +54,13 @@ python spark/consumer.py
 This script will read and process the messages using Spark Streaming.
 
 Customize the processing logic inside the spark/consumer.py script according to your requirements.
+
+## Customization
+
+1. To customize the transformation logic in the PySpark job, modify the transform_data function in sample_spark_job.py.
+
+2. To change the input data format or source, update the input.csv file or modify the producer module.
+
 
 ## Helper
 

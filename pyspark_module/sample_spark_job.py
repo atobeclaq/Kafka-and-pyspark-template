@@ -20,7 +20,7 @@ def transform_data(input_data, output_file, transformation_fn, schema):
     # Convert the input_data dictionary to a list of rows
     rows = [(input_data[field.name]) for field in schema.fields]
 
-    logger.info(" input data is ", rows)
+    logger.info(" input data is "  + str(rows))
     # Create the DataFrame
     input_df = spark.createDataFrame([rows], schema)
 

@@ -2,6 +2,13 @@
 
 This project demonstrates the integration of Apache Kafka and Apache Spark for processing streaming data.
 
+## Features
+
+- Kafka producer: Generates test messages or reads data from a CSV file and sends it to a Kafka topic.
+- Kafka consumer: Subscribes to a Kafka topic, receives messages, and processes them.
+- PySpark data transformation: Applies data transformation logic using PySpark DataFrame API.
+- Output to CSV: Saves the transformed data as a CSV file.
+
 ## Prerequisites
 
 - Python 3.x
@@ -17,21 +24,10 @@ This project demonstrates the integration of Apache Kafka and Apache Spark for p
 
 3. Install Apache Spark. Follow the official Spark documentation for installation instructions.
 
-## Project Structure
+4. Clone the repository:
 
-- `kafka/sample-kafka-producer.py`: Kafka producer script that sends messages to a Kafka topic.
-- `kafka/sample-kafka-consumer.py`: Spark consumer script that reads and processes messages from a Kafka topic.
-    Kafka-and-PySpark-Template
-    │ README.md
-    │ combine.py
-    │
-    └───pyspark_module
-    │ │ sample_spark_job.py
-    │ │ input.csv
-    │
-    └───kafka_module
-    │ sample_kafka_consumer.py
-    │ sample_kafka_producer.py
+```bash
+git clone https://github.com/atobeclaq/Kafka-and-pyspark-template.git
 
 ## Usage
 
@@ -42,24 +38,17 @@ This project demonstrates the integration of Apache Kafka and Apache Spark for p
 
 2. In a new terminal, run the Kafka producer:
 ```shell
-python kafka/producer.py
+python main.py
 ```
-This script will start sending messages to a Kafka topic.
-
-3. In another terminal, run the Spark consumer:
-```shell
-python spark/consumer.py
-```
-
-This script will read and process the messages using Spark Streaming.
-
-Customize the processing logic inside the spark/consumer.py script according to your requirements.
+This script will start sending messages to a Kafka topic, and the script will read and process the messages using Spark Streaming.
 
 ## Customization
 
 1. To customize the transformation logic in the PySpark job, modify the transform_data function in sample_spark_job.py.
 
 2. To change the input data format or source, update the input.csv file or modify the producer module.
+
+3. To change where the streaming data is piped to, modify the PySpark sample file.
 
 
 ## Helper
